@@ -83,7 +83,7 @@ with DAG("user_processing", start_date=datetime(2024, 8, 30), schedule_interval=
     store_user = PythonOperator(
         task_id='store_user',
         python_callable=_store_user
-    )
+    )                                        
 
     # Dependency
     is_api_available >> extract_user >> process_user >> store_user
